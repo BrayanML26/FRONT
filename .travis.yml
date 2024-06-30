@@ -1,0 +1,23 @@
+# .travis.yml for Frontend (ReactJS)
+
+language: node_js
+node_js:
+  - "14"
+
+cache:
+  directories:
+    - node_modules
+
+install:
+  - npm install
+
+script:
+  - npm run build
+  - npm test -- --coverage
+
+deploy:
+  provider: script
+  skip_cleanup: true
+  script: npm run deploy
+  on:
+    branch: main
