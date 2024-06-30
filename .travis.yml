@@ -2,7 +2,7 @@
 
 language: node_js
 node_js:
-  - "14"
+  - "16"
 
 cache:
   directories:
@@ -17,7 +17,6 @@ script:
 
 deploy:
   provider: script
-  skip_cleanup: true
-  script: npm run deploy
+  script: bash scripts/deploy.sh  # Ejemplo de script de despliegue personalizado
   on:
     branch: main
